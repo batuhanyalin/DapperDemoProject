@@ -1,0 +1,30 @@
+﻿@model CreateProductDto
+@{
+    ViewData["Title"] = "CreateProduct";
+}
+
+<div class="container">
+    <h2>Yeni Ürün Ekle</h2>
+    <div class="row">
+        <form method="post">
+            <div class="col col-md-8">
+                <label class="form-label">Ürün Adı</label>
+                <input class="form-control" type="text" asp-for="Name" />
+                <br />
+                <label class="form-label">Stok</label>
+                <input class="form-control" type="number" asp-for="Stock" />
+                <br />
+                <label class="form-label">Fiyat</label>
+                <input class="form-control" type="text" asp-for="Price" />
+                <br />
+                <label class="form-label">Kategori</label>
+                <select class="form-control" asp-for="CategoryId" asp-items="@ViewBag.categoryList"></select>
+                <br />
+            </div>
+            <br />
+            <button class="btn btn-success">Kaydet</button>
+        </form>
+
+    </div>
+</div>
+
